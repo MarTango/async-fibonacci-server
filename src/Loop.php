@@ -30,7 +30,7 @@ class Loop
         $ready = stream_select($readSocks, $sendSocks, $e, 0);
 
         foreach ($readSocks as $taskId => $sock) {
-            self::$tasks[] = self::waiting[$taskId];
+            self::$tasks[] = self::$waiting[$taskId];
             unset(self::$recvWait[$taskId]);
             unset(self::$waiting[$taskId]);
         }
